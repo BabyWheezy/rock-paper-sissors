@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Rock Paper Scissors</title>
+</head>
+<body>
+
+<script>
+	function computerPlay() {
+		let values = ["rock","paper","sissors"];
+		let choice = values[Math.floor(Math.random() * values.length)];
+		return choice;
+	}
+
+	function playRound (playerSelection, computerSelection){
+		if (playerSelection == computerSelection){
+			console.log('Tied!');
+		} else if (playerSelection == 'rock' && computerSelection == 'sissors' ||
+			playerSelection == 'paper' && computerSelection == 'rock' ||
+		playerSelection == 'sissors' && computerSelection == 'paper') {
+			console.log('Win');
+		} else console.log('Lost');
+	}
+
+
+	//function playRound (playerSelection, computerSelection) {
+
+		//if(playerSelection == 'rock',computerSelection == 'rock'){
+		//	return 'Tie';
+		//} else if (playerSelection == 'rock' , computerSelection == 'sissors') {
+		//	return 'You win';
+		//} else if (playerSelection == 'rock', computerSelection == 'paper'){
+		//	return 'You lose!';
+		//} else if (playerSelection == 'paper', computerSelection == 'rock') {
+		//	return 'You win!';
+		//} else if (playerSelection == 'paper', computerSelection == 'paper') {
+		//	return 'Its a tie!';
+		//} else if (playerSelection == 'paper', computerSelection == 'sissors') {
+		//	return 'You lose!';
+		//} else if (playerSelection == 'sissors', computerSelection == 'rock') {
+		//	return 'You lose!';
+		//} else if (playerSelection == 'sissors', computerSelection == 'paper') {
+		//	return 'You win!';
+		//} else if (playerSelection == 'sissors', computerSelection == 'sissors') {
+		//	return 'Its a tie!';
+		//}
+	//}
+	function game() {
+		let gameRound = 0;
+		while (gameRound <5) {
+			const playerSelection = window.prompt('Pick rock, paper, or sissors!').toLowerCase();
+			const computerSelection = computerPlay();
+			console.log(playRound(playerSelection, computerSelection));
+			gameRound++;
+		}
+	}
+
+	game();
+//nicholas ewing
+</script>
+</body>
+</html>
